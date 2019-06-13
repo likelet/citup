@@ -25,9 +25,9 @@ AnalyzeOutputs.exe: AnalyzeOutputs.cpp
 	$(CC) -ggdb AnalyzeOutputs.cpp -o AnalyzeOutputs.exe -O3 -I../External/ -I$(BOOST_DIRECTORY)
 
 CplexApplication.exe: CplexApplication.cpp
-	$(CC) -ggdb CplexApplication.cpp -o CplexApplication.exe -O3 -DIL_STD -DILOSTRICTPOD -I../External/ -I$(CPLEX_DIRECTORY)/concert/include -I$(CPLEX_DIRECTORY)/cplex/include -L$(CPLEX_DIRECTORY)/concert/lib/$(CPLEX_BUILD)/static_pic/ -lconcert -L$(CPLEX_DIRECTORY)/cplex/lib/$(CPLEX_BUILD)/static_pic -l ilocplex -l cplex -l m -l pthread
+	$(CC) -ggdb CplexApplication.cpp -o CplexApplication.exe -O3 -DIL_STD -DILOSTRICTPOD -I../External/ -I$(CPLEX_DIRECTORY)/concert/include -I$(CPLEX_DIRECTORY)/cplex/include -L$(CPLEX_DIRECTORY)/concert/lib/$(CPLEX_BUILD)/static_pic/ -lconcert -L$(CPLEX_DIRECTORY)/cplex/lib/$(CPLEX_BUILD)/static_pic -l ilocplex -l cplex -l m -l pthread -l dl -l concert 
 
 CitupIter.exe: CitupIter.cpp trees.h
-	$(CC) -ggdb CitupIter.cpp -o CitupIter.exe -O3 -DIL_STD -DILOSTRICTPOD -I../External/ -I$(BOOST_DIRECTORY) -I$(CPLEX_DIRECTORY)/concert/include -I$(CPLEX_DIRECTORY)/cplex/include -L$(CPLEX_DIRECTORY)/concert/lib/$(CPLEX_BUILD)/static_pic/ -lconcert -L$(CPLEX_DIRECTORY)/cplex/lib/$(CPLEX_BUILD)/static_pic -l ilocplex -l cplex -l m -l pthread
+	$(CC) -ggdb CitupIter.cpp -o CitupIter.exe -O3 -DIL_STD -DILOSTRICTPOD -I../External/ -I$(BOOST_DIRECTORY) -I$(CPLEX_DIRECTORY)/concert/include -I$(CPLEX_DIRECTORY)/cplex/include -L$(CPLEX_DIRECTORY)/concert/lib/$(CPLEX_BUILD)/static_pic/ -lconcert -L$(CPLEX_DIRECTORY)/cplex/lib/$(CPLEX_BUILD)/static_pic -l ilocplex -l cplex -l m -l pthread -l dl -l concert 
 
 	
